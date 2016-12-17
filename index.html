@@ -5,10 +5,73 @@
 <title>Sebastian Hancock's Portfolio</title>
 
 <meta name=‘viewport’ content=‘initial-scale=1,maximum-scale=1,user-scalable=no’ />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+<link href='http://fonts.googleapis.com/css?family=Imprima' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 <style>
     
-/* CSS style rules go here! */   
+    body {
+        background: #f5f5f5;
+        font-family: Imprima, sans-serif;
+    }
+    header {
+        width: 100%;
+        min-width: 800px;
+        margin: 0 auto;
+        background: steelblue;
+        padding: 15px 9 20px;
+    }
+    h1 {
+        font-family: Dosis, sans-serif;
+        color: #375671;
+        width: 80%;
+        margin: 0 auto;
+        color: whitesmoke;
+    }
+    h2 {
+        font-family: Dosis, sans-serif;
+        color: #375671;
+        width: 80%;
+        margin: 0 auto;
+        color: whitesmoke;
+    }
+    
+    h3 {
+        font-family: Dosis, sans-serif;
+        color: #003d71;
+    }
+    p {
+        font-size: .9em;
+        color: #375671;
+    }
+    ul {
+        list-style-type: none;
+        font-size: .9em;
+        color: #375671;
+        line-height: 1.6em;
+    }
+    a, a:visited {
+        color: #003d71;
+    }
+    .project {
+        width: 80%;
+        min-width: 800px;
+        height: 100%;
+        margin: 35px auto;
+    }
+    .project:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .project-image {
+        width: 388px;
+        height: 240px;
+        background: white;
+        float: left;
+        margin-right: 20px;
+        border: 2px solid #dddddd;
+    }
 
 </style>
 </head>
@@ -19,9 +82,10 @@
         <h2>Web Cartography at the University of Kentucky</h2>
     </header>
 
-    <section>
-        <img src="images/power_s.jpg" alt="map of plants in USA" />
-        <h3>Map of Hydroelectric, Coal, and Nuclear Power Plants in the USA</h3>
+    <!--Leaflet Map -->
+    <section class="project">
+        <a href="#"><img src="images/power_s.jpg" alt="map of plants in USA" class="project-image" /></a>
+        <a href="#"><h3>Map of Hydroelectric, Coal, and Nuclear Power Plants in the USA</h3></a>
         <p>This map shows plants etc etc etc</p>
         <p>I made this map with JS for my class etc more words here</p>
         <ul>
@@ -30,6 +94,34 @@
         </ul>
     
     </section>
+    
+    <!-- PDF Map -->
+    <section class="project">
+        <a href="/maps/breweries.pdf"><img src="images/breweries_.png" alt="map of breweries in the USA" class="project-image" /></a>
+        <a href="/maps/breweries.pdf"><h3>Map of Breweries in North America and Hawaii</h3></a>
+        <p>This map shows breweries in North America and Hawaii</p>
+        <p>I made this map and here are more words</p>
+        <ul>
+            <li>See the map: <a href="/maps/breweries.pdf">Breweries in USA</a></li>
+            <li>Data Source: <a href="www.poifactory.com">POI Factory</a></li>
+        </ul>
+    
+    </section>
+    
+    <!--Carto Map -->
+    <section class="project">
+        <a href="https://shancock.carto.com/viz/42be31a6-7c7c-11e6-88e3-0e3ebc282e83/public_map"><img src="images/starbucks_dunkin_.png" alt="Starbucks or Dunkin' Donuts Map" class="project-image" /></a>
+        <a href="https://shancock.carto.com/viz/42be31a6-7c7c-11e6-88e3-0e3ebc282e83/public_map"><h3>Starbucks or Dunkin' Donuts?</h3></a>
+        <p>This map shows the Starbucks to Dunkin' Donuts ratio throughout the USA per county</p>
+        <p>I made this map and here are more words</p>
+        <ul>
+            <li>See the map: <a href="https://shancock.carto.com/viz/42be31a6-7c7c-11e6-88e3-0e3ebc282e83/public_map">Starbucks or Dunkin' Map</a></li>
+            <li>Data Source: <a href="www.poifactory.com">POI Factory</a></li>
+        </ul>
+    
+    </section>
+    
+    
     
 </body>
 </html>
