@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sebastian Hancock's Portfolio</title>
+
+    <!--<meta name=‘viewport’ content=‘initial-scale=1,maximum-scale=1,user-scalable=no’ /> -->
+    
+    <link href="https://fonts.googleapis.com/css?family=Asap|Nunito" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/skeleton.css" rel="stylesheet">
+    <link href="css/style-old.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Portfolio for Sebastian Hancock</h1>
+        <div id="s-icons">
+            <a href="https://twitter.com/_sebastianch_" target="_blank"><img src="/images/tw.svg" alt="twitter" class="social" /></a>
+            <a href="https://www.linkedin.com/in/sebastianhancock" target="_blank"><img src="/images/in.svg" alt="twitter" class="social" /></a>
+        </div>
+
+    </header>
+
+    <section class="project">
+        <a href="https://sebastian-ch.github.io/earthquake" target="_blank"><img src="images/eq.PNG" alt="map of earthquakes" class="project-image" /></a>
+        <a href="https://sebastian-ch.github.io/earthquake" target="_blank"><h3>Map of Earthquakes above 1.0 Magnitude That Occurred Today</h3></a>
+        <p>This map was built with the Leaflet JavaScript library and displays the earthquakes above a 1.0 magnitude that occurred today. Using <a href="https://github.com/calvinmetcalf/leaflet-ajax" target="_blank">leaflet-ajax</a>, this map takes USGS earthquake data in geojson format that updates every 5 minutes.
+        </p>
+        <ul>
+            <li>See the map: <a href="https://sebastian-ch.github.io/earthquake" target="_blank">Today's Earthquakes</a></li>
+            <!-- <li><a href="https://github.com/sebastian-ch/earthquake" target="_blank">View the code</a></li> -->
+            <li>Data Source: <a href="http://earthquake.usgs.gov/earthquakes/" target="_blank">USGS</a></li>
+        </ul>
+
+    </section>
+
+    <!-- Power Plants -->
+    <section class="project">
+        <a href="https://sebastian-ch.github.io/power-plants-usa/" target="_blank"><img src="images/power.PNG" alt="map of plants in USA" class="project-image" /></a>
+        <a href="https://sebastian-ch.github.io/power-plants-usa/" target="_blank"><h3>Map of Hydroelectric, Coal, and Nuclear Power Plants in the USA</h3></a>
+        <p>This map was built with the Leaflet JavaScript library and displays hydroelectric, coal, and Nuclear power plants within the USA. Proportional symbols are used to show the power capacity of each plant. Clicking on the map will filter the plants to the ones within 500km of each click.</p>
+        <ul>
+            <li>See the map: <a href="https://sebastian-ch.github.io/power-plants-usa/" target="_blank">Power Plants in USA</a></li>
+            <li>Data Source: <a href="http://www.eia.gov/electricity/data/eia923/" target="_blank">US Energy Information Administration</a></li>
+        </ul>
+
+    </section>
+
+    <!-- Breweries -->
+    <section class="project">
+        <a href="/maps/breweries.pdf" target="_blank"><img src="images/brews.PNG" alt="map of breweries in the USA" class="project-image" /></a>
+        <a href="/maps/breweries.pdf" target="_blank"><h3>Map of Breweries in North America and Hawaii</h3></a>
+        <p>This hexbin map shows the number of breweries in North America and Hawaii per 50km Inner Diameter Hexagons. QGIS was used to create this map.</p>
+        <ul>
+            <li>See the map: <a href="/maps/breweries.pdf">Breweries in USA</a></li>
+            <li>Data Source: <a href="www.poifactory.com">POI Factory</a></li>
+        </ul>
+
+    </section>
+
+    <!-- Dunkin vs. Starbucks -->
+    <section class="project">
+        <a href="https://shancock.carto.com/viz/42be31a6-7c7c-11e6-88e3-0e3ebc282e83/public_map" target="_blank"><img src="images/stardd.PNG" alt="Starbucks or Dunkin' Donuts Map" class="project-image" /></a>
+        <a href="https://shancock.carto.com/viz/42be31a6-7c7c-11e6-88e3-0e3ebc282e83/public_map" target="_blank"><h3>Starbucks or Dunkin' Donuts?</h3></a>
+        <p>This bivariate map shows the ratio of Starbucks to Dunkin' Donuts throughout the USA. The analysis was completed in QGIS.</p>
+        <ul>
+            <li>See the map: <a href="https://shancock.carto.com/viz/42be31a6-7c7c-11e6-88e3-0e3ebc282e83/public_map" target="_blank">Starbucks or Dunkin' Map</a></li>
+            <li>Data Source: <a href="www.poifactory.com">POI Factory</a></li>
+        </ul>
+
+    </section>
+
+
+
+</body>
+
+</html>
