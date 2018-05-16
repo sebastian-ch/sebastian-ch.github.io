@@ -1,22 +1,37 @@
-/*html {
-    background: url(../images/waik-min.png) no-repeat center center fixed;
+html { 
+    background: url(images/waik-min.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-} 
-*/
+  }
 
-.container {
-    max-width: 800px;
-   /* max-width: 450px;
-    background-color: rgb(245,245,245, 0.7); */
-   
+  .total-container {
+      max-width:  1200px;
+      margin: 10px auto 10px auto;
+
+  }
+
+  .flex-container {
+    display: flex; /* or inline-flex */
+ 
+    justify-content: space-between;
+    
+  }
+
+  .flex-item {
+    text-align: center;
+  }
+
+
+/*.container {
+    max-width: 450px;
+    background-color: rgb(245, 245, 245, 0.7);
 }
 
 p,
-h2 { 
-   opacity: 1.0;
+h2 {
+    opacity: 1.0;
     margin: 0px;
 }
 
@@ -43,7 +58,7 @@ h6 {
 
 .project {
     text-align: center;
-}
+} */
 
 .u-max-full-width {
     border: solid 2px #222222;
