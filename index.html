@@ -1,147 +1,92 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Sebastian Hancock geographer cartographer maps leaflet javascript" />
-    <meta name="keywords"
-        content="cartography geography maps gis arcgis qgis mapping spatial data analysis geomatics web mapping javascript leaflet mapbox" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="shortcut icon" href="images/favicon-globe.ico" type="image/x-icon">
     <title>Sebastian Chance Hancock</title>
+    <link rel="shortcut icon" href="./favicon-globe.ico" type="image/x-icon">
+    <meta name='description' content='Sebastian Hancock Portfolio Resume Cartographer, Front End Developer, GIS Engineer, Web Mapping' />
+    <meta name="robots" content="index, follow">
+    <link href='./style.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div class='page1'>
+    <div id='nav' class='nav sticky'>
+        <div id='item'><a href='#page2'>Work</a></div>
+        <div id='item'><a href='#page3'>Education</a></div>
+        <div id='item'><a href='#page4'>Pinned Github Repo's</a></div>
+        <div id='item'><a href='#page5'>About Me</a></div>
+    </div>
+    <div id='center2'>
+        Sebastian Chance Hancock
+    </div>
+    <div id='link-wrap'>
+      <a href="https://github.com/sebastian-ch" target="_blank"><img id='github' src='./github-brands.svg' /></a>
+      <a href="https://www.linkedin.com/in/sebastianhancock/" target="_blank"><img id='linkedin' src='./linkedin-brands.svg' /></a>
+      <a href="https://twitter.com/_sebastianch_" target="_blank"><img id='twitter' src='./twitter-brands.svg' /></a>
+    </div>
+  </div>
 
-    <link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/skeleton.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  
+  <div id='page2' class='page1'>
+    <div id='center'>Work</div>
+    <div id='project-wrap'>
+      <ul>
+        <li><b>2021: GIS Developer Intern - UNDP</b></li>
+        <li>2015 - 2017: Spatial Data Analyst - Pitney Bowes</li>
+        <li>2013 - 2014: Map Specialist - Michael Baker/FEMA</li>
+      </ul>
 
-    <script src="https://use.fontawesome.com/c83d3d3ff4.js"></script>
-    <script src="js/script.js"></script>
+     <!-- <div id='content'>One</div>
+      <div id='content'>two</div>
+      <div id='content'>three</div> -->
+      
+    </div>
+  </div>
+  <div id='page3' class='page1'>
+    <div id='center'>Education</div>
+    <div id='project-wrap'>
+      <ul>
+        <li>2018 - 2020: Master of Science, Cartography: TU Munich/TU Vienna/TU Dresden</li>
+        <li>2016 - 2017: Graduate Certificate, Digital Mapping: University of Kentucky</li>
+        <li>2009 - 2013: Bachelor of Science, Geology: College of William & Mary</li>
+      </ul>
+      <!--<div id='content'>One</div>
+      <div id='content'>two</div>
+      <div id='content'>three</div> -->
+      
+    </div>
+  </div>
+
+  <div id='page4' class='page1'>
+    <div id='center'>Pinned Github Repo's</div>
+    <div id='project-wrap'>
+      <ul id='github-pin'>
+
+      </ul>
+      <!--<div id='content'>One</div>
+      <div id='content'>two</div>
+      <div id='content'>three</div>-->
+      
+    </div>
+
+  </div>
+  <div id='page5' class='page1'>
+    <div id='center'>About Me</div>
+    <div id='project-wrap'>
+      <div id='content'>I like <span id='maps'>maps</span>, <span id='hiking'>hiking</span>, climbing, javascript, <span id='beach'>the beach</span>, the dodgers, and the marvel universe.</div>
+      <!--<div id='content'><img src='./pics/IMG_6888.jpg'></img></div> -->
+      <div id='content' class='mappic hide'><img src='./pics/IMG_4704.jpeg'></img></div> 
+      <div id='content' class='beachpic hide'><img src='./pics/IMG-2889.jpg'></img></div>
+      <div id='content' class='hikingpic hide'><img src='./pics/IMG_0035.jpg'></img></div>  
+      
+    </div>
     
-</head>
+  </div>
 
-
-<div class="content">
-    <section class="header">
-        <div class="container">
-
-            <h2 class="title">Sebastian Hancock</h2>
-
-            <div class="header row">
-                <div class="offset-by-two eight columns head">
-                    <a href="https://twitter.com/_sebastianch_" target="_blank"><span class="fa fa-twitter-square fa-2x"
-                            aria-hidden="true"></span></a>
-                    <a href="https://github.com/sebastian-ch" target="_blank">
-                        <span class="fa fa-github fa-2x" aria-hidden="true"></span></a>
-                    <a href="https://www.linkedin.com/in/sebastianhancock/" target="_blank">
-                        <span class="fa fa-linkedin fa-2x" aria-hidden="true"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--end of .container -->
-    </section>
-    <!--end of header section -->
-
-    <section class="project">
-        <div class="container">
-
-           <!-- <p>Pokedex with React</p>
-            <a href="https://sebastian-ch.github.io/pokedex/" target="_blank">
-                <img src="images/poke.png" alt="Pokedex" class="u-max-full-width" />
-            </a> -->
-
-            <p>Digidex with React</p>
-            <a href="https://digimon.rocks" target="_blank">
-                <img src="images/digi.png" alt="Digidex" class="u-max-full-width" />
-            </a>
-
-            <p>Heat Map of My Location: NodeJS App</p>
-            <a href="https://sebastian-ch.github.io/TrackMe/" target="_blank">
-                <img src="images/heat-min.png" alt="Heat Map of Me" class="u-max-full-width" />
-            </a>
-
-            <p>78mb GeoJSON converted to tiles in the browser using GeoJSON-VT</p>
-            <a href="https://sebastian-ch.github.io/geojsonAsTilesExample/" target="_blank">
-                <img src="images/gjntiles.png" alt="geojson as tiles" class="u-max-full-width" />
-            </a>
-
-            <p>European Languages Drag and Drop Game with D3</p>
-            <a href="https://sebastian-ch.github.io/ThePuzzleOfEuropeanLanguages/" target="_blank">
-                <img src="images/languages.png" alt="European Langues" class="u-max-full-width" />
-            </a>
-
-            <p>All US Counties including Puerto Rico and Minor Outlying Islands with D3</p>
-            <a href="https://sebastian-ch.github.io/everyCounty/" target="_blank">
-                <img src="images/everycounty.png" alt="all US Counties" class="u-max-full-width" />
-            </a>
-
-            <p>3D Map of Urban Honolulu Buildings with Mapbox GL</p>
-            <a href="https://sebastian-ch.github.io/Honolulu3D/" target="_blank">
-                <img src="images/hono3d.png" alt="3D Mapbox GL Map" class="u-max-full-width" />
-            </a>
-
-            <p>GeoTagged Photos with Leaflet.Photo and the Flickr API</p>
-            <a href="https://sebastian-ch.github.io/FlickrPhotoMap/" target="_blank">
-                <img src="images/photomap.png" alt="Leaflet.Photo Plugin Flickr" class="u-max-full-width" />
-            </a>
-
-            <p>Web Map of Starbucks vs. Dunkin' Donuts using Albers Projection in Leaflet</p>
-            <a href="https://sebastian-ch.github.io/starbucksvsdd/" target="_blank">
-                <img src="images/newstardd.png" alt="Starbucks vs. Dunkin' Donuts" class="u-max-full-width" />
-            </a>
-
-            <p>Find Your FEMA Flood Zone</p>
-            <a href="https://sebastian-ch.github.io/floodzones" target="_blank">
-                <img src="images/floodzones.png" alt="FEMA Flood Zones" class="u-max-full-width" />
-            </a>
-
-            <p>D3 Map of US Unemployment from 2001-2015</p>
-            <a href="https://sebastian-ch.github.io/us-unemployment" target="_blank">
-                <img src="images/us-unem.png" alt="map of US unemployment" class="u-max-full-width" />
-            </a>
-
-            <p>Earthquakes in The Past Day Above 1.0 Magnitude</p>
-            <a href="https://sebastian-ch.github.io/earthquake" target="_blank">
-                <img src="images/eq.PNG" alt="map of earthquakes" class="u-max-full-width" />
-            </a>
-
-            <p>Kenyan Primary School Enrollment in 2014</p>
-            <a href="https://sebastian-ch.github.io/kenya-education/" target="_blank">
-                <img src="images/kenya.png" alt="Kenyan Primary Education" class="u-max-full-width" />
-            </a>
-
-            <p>Housing Vacancies in Kentucky Counties</p>
-            <a href="https://sebastian-ch.github.io/vacancies-kentucky/" target="_blank">
-                <img src="images/ky-vacancies.png" alt="map of Kentucky vacancies" class="u-max-full-width" />
-            </a>
-
-            <p>Hydroelectric, Nuclear, and Coal Plants in the USA</p>
-            <a href="https://sebastian-ch.github.io/power-plants-usa/" target="_blank">
-                <img src="images/power.PNG" alt="map of power plants" class="u-max-full-width" />
-            </a>
-
-            <p>Breweries in North America</p>
-            <a href="/maps/breweries.pdf" target="_blank">
-                <img src="images/brews.PNG" alt="map of breweries" class="u-max-full-width" />
-            </a>
-
-        </div>
-        <!--end of .container -->
-    </section>
-    <!--end of project section -->
-
-    <section class="footer">
-        <div class="container">
-            <div class="footer row" id="test">
-                <object data="/images/svg/va.svg" type="image/svg+xml" class="svg va" id="vaSVG"></object>
-            </div>
-        </div>
-        <!--end of .container -->
-    </section>
-    <!--end of footer section -->
-
-</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>  
+  <script src='/script.js'></script>
+  </body>
 </html>
