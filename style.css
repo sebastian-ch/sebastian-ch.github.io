@@ -49,6 +49,14 @@ html, body {
 
   a {
     padding: 10px;
+    text-decoration: none;
+    color: #4c4c4c;
+    font-size: 14px;
+  }
+
+  a:hover {
+    cursor: pointer;
+    opacity: 0.5;
   }
 
   /*.nav{
@@ -72,6 +80,7 @@ html, body {
     width: 30vw;
     left: 0;
     text-align: center;
+    padding: 5px;
   }
 
 
