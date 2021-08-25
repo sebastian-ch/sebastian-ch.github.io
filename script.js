@@ -1,36 +1,41 @@
 const projects = [
       {
-        'name': 'Digidex',
+        'name': 'Digidex [React]',
         'url': 'https://digimon.rocks/',
         'github': 'https://github.com/sebastian-ch/digidex'
       },
       {
-        'name': 'US Zip Code <-> German Zip Code',
+        'name': 'GloNAF Atlas - Master\'s Thesis [d3]',
+        'url': 'https://sebastian-ch.github.io/glonafAtlas/',
+        'github': 'https://github.com/sebastian-ch/glonafAtlas'
+      },
+      {
+        'name': 'US Zip Code <-> German Zip Code [Leaflet]',
         'url': 'https://sebastian-ch.github.io/zipcodes/',
         'github': 'https://github.com/sebastian-ch/zipcodes'
       },
       {
-        'name': 'Every County',
-        'url': 'https://sebastian-ch.github.io/zipcodes/',
-        'github': 'https://github.com/sebastian-ch/zipcodes'
+        'name': 'Every County [d3]',
+        'url': 'https://sebastian-ch.github.io/everyCounty/',
+        'github': 'https://github.com/sebastian-ch/everyCounty'
       },
       {
-        'name': 'Heat map of my location 2019-2020',
+        'name': 'Heat map of my location 2019-2020 [Leaflet]',
         'url': 'https://sebastian-ch.github.io/TrackMe/',
         'github': 'https://github.com/sebastian-ch/TrackMe'
       },
       {
-        'name': 'I rode a scooter 550 miles from Phnom Penh to Saigon',
+        'name': 'I rode a scooter 550 miles from Phnom Penh to Saigon [Leaflet]',
         'url': 'https://sebastian-ch.github.io/motorbike-trip/',
         'github': 'https://github.com/sebastian-ch/motorbike-trip'
       },
       {
-        'name': 'Find your FEMA flood zone',
+        'name': 'Find your FEMA flood zone [Leaflet]',
         'url': 'https://sebastian-ch.github.io/floodzones/',
         'github': 'https://github.com/sebastian-ch/floodzones'
       },
       {
-        'name': 'Virginia Population w/ Mapbox + React',
+        'name': 'Virginia Population [React + Mapbox]',
         'url': 'https://sebastian-ch.github.io/virginiaPopulation/',
         'github': 'https://github.com/sebastian-ch/virginiaPopulation'
       },
@@ -45,17 +50,17 @@ const projects = [
         'github': 'https://github.com/sebastian-ch/flashCards'
       },
       {
-        'name': 'I made a website for my Stardew Valley farm',
+        'name': 'I made a website for my Stardew Valley farm [React]',
         'url': 'https://sebastian-ch.github.io/stromFarms/',
         'github': 'https://github.com/sebastian-ch/stromFarms'
       },
       {
-        'name': 'Search flickr for geotagged photos',
+        'name': 'Search flickr for geotagged photos [Leaflet]',
         'url': 'https://sebastian-ch.github.io/flickrTagSearch/',
         'github': 'https://github.com/sebastian-ch/flickrTagSearch'
       },
       {
-        'name': 'NodeJS app to track TheBus on Oahu ',
+        'name': 'NodeJS app to track TheBus on Oahu [Leaflet]',
         'url': 'https://github.com/sebastian-ch/OahuBusMap',
         'github': ''
       },
