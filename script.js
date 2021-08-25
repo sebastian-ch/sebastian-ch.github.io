@@ -1,51 +1,103 @@
-fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=sebastian-ch')
-    .then(resp => resp.json())
-    .then(data => {
+const projects = [
+      {
+        'name': 'Digidex',
+        'url': 'https://digimon.rocks/',
+        'github': 'https://github.com/sebastian-ch/digidex'
+      },
+      {
+        'name': 'US Zip Code <-> German Zip Code',
+        'url': 'https://sebastian-ch.github.io/zipcodes/',
+        'github': 'https://github.com/sebastian-ch/zipcodes'
+      },
+      {
+        'name': 'Every County',
+        'url': 'https://sebastian-ch.github.io/zipcodes/',
+        'github': 'https://github.com/sebastian-ch/zipcodes'
+      },
+      {
+        'name': 'Heat map of my location 2019-2020',
+        'url': 'https://sebastian-ch.github.io/TrackMe/',
+        'github': 'https://github.com/sebastian-ch/TrackMe'
+      },
+      {
+        'name': 'I rode a scooter 550 miles from Phnom Penh to Saigon',
+        'url': 'https://sebastian-ch.github.io/motorbike-trip/',
+        'github': 'https://github.com/sebastian-ch/motorbike-trip'
+      },
+      {
+        'name': 'Find your FEMA flood zone',
+        'url': 'https://sebastian-ch.github.io/floodzones/',
+        'github': 'https://github.com/sebastian-ch/floodzones'
+      },
+      {
+        'name': 'Virginia Population w/ Mapbox + React',
+        'url': 'https://sebastian-ch.github.io/virginiaPopulation/',
+        'github': 'https://github.com/sebastian-ch/virginiaPopulation'
+      },
+      {
+        'name': 'My old portfolio',
+        'url': 'https://sebastian-ch.github.io/oldportfolio/',
+        'github': 'https://github.com/sebastian-ch/oldportfolio'
+      },
+      {
+        'name': 'basic flashcards to learn German',
+        'url': 'https://sebastian-ch.github.io/flashCards/',
+        'github': 'https://github.com/sebastian-ch/flashCards'
+      },
+      {
+        'name': 'I made a website for my Stardew Valley farm',
+        'url': 'https://sebastian-ch.github.io/stromFarms/',
+        'github': 'https://github.com/sebastian-ch/stromFarms'
+      },
+      {
+        'name': 'Search flickr for geotagged photos',
+        'url': 'https://sebastian-ch.github.io/flickrTagSearch/',
+        'github': 'https://github.com/sebastian-ch/flickrTagSearch'
+      },
+      {
+        'name': 'NodeJS app to track TheBus on Oahu ',
+        'url': 'https://github.com/sebastian-ch/OahuBusMap',
+        'github': ''
+      },
 
-        addToHtml(data);
-        //console.log(data);        
+    ]
 
-    })
 
-    function addToHtml(data) {
+    addToHtml()
+
+    function addToHtml() {
 
         var wrap = document.getElementById('github-pin');
 
-        data.forEach(function(x){
-            //console.log(x)
-            var linky = document.createElement('a')
-            var created = document.createElement('li')
-            linky.textContent = x.repo
-            linky.setAttribute('href', x.link)
-            linky.setAttribute('target', '_blank')
-            created.appendChild(linky)
-            wrap.appendChild(created)
+        projects.forEach(function(x) {
+          //console.log(x);
+          var linky = document.createElement('a')
+          var created = document.createElement('li')
+          linky.textContent = x.name
+          linky.setAttribute('href', x.url)
+          linky.setAttribute('target', '_blank')
 
+          created.appendChild(linky)
+
+          if(!(x.github === '')) {
+            var githubLinky = document.createElement('a')
+            githubLinky.textContent = '(GitHub)'
+            githubLinky.setAttribute('href', x.github)
+            githubLinky.setAttribute('class', 'githublink')
+            githubLinky.setAttribute('target', '_blank')
+            created.appendChild(githubLinky)
+          }
+        
+          wrap.appendChild(created)
         })
     }
 
-   /* window.onscroll = function() {myFunction()};
-
-    // Get the navbar
-    var navbar = document.getElementById("nav");
-    
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetTop;
-    
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    } */
-
-const priv_key = '0e8fe66ebe7d63b8a37d8b6533fdcff2121f746c';
-const pub_key = '9e656fd191967a9bf10b3f6cc034b0ac';
+//const priv_key = '0e8fe66ebe7d63b8a37d8b6533fdcff2121f746c';
+//const pub_key = '9e656fd191967a9bf10b3f6cc034b0ac';
 
 //callMarvel();
- 
+/*i need this for another project, 
+seems cool right? who knew marvel had an API */
 function callMarvel() {
 
   var ts = new Date().getTime();
@@ -120,4 +172,3 @@ beachHover.addEventListener('mouseout', function(evt) {
   beachpic[0].classList.add('hide');
 
 })
-
