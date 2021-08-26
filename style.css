@@ -64,18 +64,6 @@ html, body {
     padding: 0px;
   }
 
-  /*.nav{
-     width: 30vw;
-     margin: 0px auto 0px auto; 
-   
-     margin: 0;
-     padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 50px; 
-  } */
-
   .sticky {
     margin-top: 3px;
     display: flex;
@@ -143,9 +131,6 @@ html, body {
     }
 
     #content {
-   /*   width: 200px;
-      height: 100px; 
-      border: 1px solid red; */
       margin-top: 3px;
 
     }
