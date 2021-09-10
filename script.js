@@ -142,6 +142,8 @@ beachHover.addEventListener('mouseout', function(evt) {
 
 })
 
+
+//eventually adding a night mode like the cool kids have
 function getLocaltime(){
   return new Date().getHours();
 }
