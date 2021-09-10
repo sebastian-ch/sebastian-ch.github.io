@@ -20,7 +20,7 @@ const projects = [
         'github': 'https://github.com/sebastian-ch/everyCounty'
       },
       {
-        'name': 'Heat map of my location 2019-2020 [Leaflet]',
+        'name': 'Heat map of my location 2019-2020 [Leaflet + NodeJS backend]',
         'url': 'https://sebastian-ch.github.io/TrackMe/',
         'github': 'https://github.com/sebastian-ch/TrackMe'
       },
