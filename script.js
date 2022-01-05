@@ -72,12 +72,12 @@ const projects = [
 
     function addToHtml() {
 
-        var wrap = document.getElementById('github-pin');
+        const wrap = document.getElementById('github-pin');
 
         projects.forEach(function(x) {
           //console.log(x);
-          var linky = document.createElement('a')
-          var created = document.createElement('li')
+          const linky = document.createElement('a')
+          const created = document.createElement('li')
           linky.textContent = x.name
           linky.setAttribute('href', x.url)
           linky.setAttribute('target', '_blank')
@@ -99,13 +99,13 @@ const projects = [
 
 
 
-var mapHover = document.getElementById('maps')
-var beachHover = document.getElementById('beach')
-var hikingHover = document.getElementById('hiking')
+const mapHover = document.getElementById('maps')
+const beachHover = document.getElementById('beach')
+const hikingHover = document.getElementById('hiking')
 
-var mappic = document.getElementsByClassName('mappic')
-var beachpic = document.getElementsByClassName('beachpic')
-var hikingpic = document.getElementsByClassName('hikingpic')
+const mappic = document.getElementsByClassName('mappic')
+const beachpic = document.getElementsByClassName('beachpic')
+const hikingpic = document.getElementsByClassName('hikingpic')
 
 mapHover.addEventListener('mouseover', function(evt) {
 
