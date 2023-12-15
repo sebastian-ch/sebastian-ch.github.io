@@ -1,5 +1,10 @@
 const projects = [
       {
+            'name': 'use AI and DALL-E to generate random new Pokemon  [React + NodeJS]',
+            'url': 'https://sebastian-ch.github.io/newPokeGenerator/',
+            'github': 'https://github.com/sebastian-ch/newPokeGenerator'
+      },
+      {
         'name': 'Digidex [React]',
         'url': 'https://digimon.rocks/',
         'github': 'https://github.com/sebastian-ch/digidex'
