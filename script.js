@@ -1,5 +1,10 @@
 const projects = [
   {
+    'name': 'Generate ESRI Experience Builder Widget Templates from cmd line',
+    'url': 'https://github.com/sebastian-ch/experience-builder-widget-generator',
+    'github': ''
+  },
+  {
     'name': 'Amtrak Train Tracker',
     'url': 'https://chance-labs.github.io/trainTracker/',
     'github': ''
@@ -11,7 +16,7 @@ const projects = [
   },
   {
     'name': 'Digidex [React]',
-    'url': 'https://digimon.rocks/',
+    'url': 'https://github.com/sebastian-ch/digidex',
     'github': 'https://github.com/sebastian-ch/digidex'
   },
   {
