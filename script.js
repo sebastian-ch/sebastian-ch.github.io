@@ -5,12 +5,12 @@ const projects = [
     'github': 'https://github.com/sebastian-ch/myGfWantsMeToGetATruckToHelpHerMove'
   },
   {
-    'name': 'Generate ESRI Experience Builder Widget Templates from cmd line',
+    'name': 'Generate ESRI Experience Builder Widget Templates from cmd line [NodeJS]',
     'url': 'https://github.com/sebastian-ch/experience-builder-widget-generator',
     'github': ''
   },
   {
-    'name': 'Amtrak Train Tracker',
+    'name': 'Amtrak Train Tracker [React]',
     'url': 'https://chance-labs.github.io/trainTracker/',
     'github': ''
   },
