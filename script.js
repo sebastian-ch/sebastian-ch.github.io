@@ -1,6 +1,6 @@
 const projects = [
   {
-    'name': "2 door toyota tacoma's near Richmond, VA [ReactJS + AWS]",
+    'name': "2 door toyota tacoma's near Richmond, VA [React + AWS]",
     'url': 'https://sebastian-ch.github.io/myGfWantsMeToGetATruckToHelpHerMove/',
     'github': 'https://github.com/sebastian-ch/myGfWantsMeToGetATruckToHelpHerMove'
   },
