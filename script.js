@@ -1,11 +1,11 @@
 const projects = [
   {
-    'name': "Fortnite Stats Module for MagicMirror (i know i know) [JavaScript]",
+    'name': "Fortnite Stats Module for MagicMirror [JavaScript]",
     'url': 'https://github.com/sebastian-ch/MMM-fortnite-stats',
     'github': ''
   },
   {
-    'name': "2 door toyota tacoma's near Richmond, VA [React + AWS]",
+    'name': "2 door toyota tacoma's for sale near Richmond, VA [React + AWS]",
     'url': 'https://sebastian-ch.github.io/myGfWantsMeToGetATruckToHelpHerMove/',
     'github': 'https://github.com/sebastian-ch/myGfWantsMeToGetATruckToHelpHerMove'
   },
