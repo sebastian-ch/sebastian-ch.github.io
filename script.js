@@ -5,7 +5,7 @@ const projects = [
     'github': ''
   },
   {
-    'name': "2 door toyota tacoma's for sale near Richmond, VA [React + AWS]",
+    'name': "trucks for sale near Richmond, VA [React + AWS]",
     'url': 'https://sebastian-ch.github.io/myGfWantsMeToGetATruckToHelpHerMove/',
     'github': 'https://github.com/sebastian-ch/myGfWantsMeToGetATruckToHelpHerMove'
   },
