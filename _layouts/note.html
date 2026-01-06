@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} - Digital Garden</title>
+  <link rel="shortcut icon" href="{{ '/' | relative_url }}favicon-globe.ico" type="image/x-icon">
+  <link href='{{ "/style.css" | relative_url }}' rel='stylesheet' />
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</button>
+
+  <div class="garden-wrapper">
+    <nav class="garden-nav">
+      <div class="nav-categories">
+        <a href="{{ '/garden' | relative_url }}?category=code" class="nav-category">Code Snippets</a>
+        <a href="{{ '/garden' | relative_url }}?category=random" class="nav-category">Random Stuff</a>
+        <a href="{{ '/garden' | relative_url }}?category=geography" class="nav-category">Geography</a>
+      </div>
+      <div class="nav-breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="nav-separator">/</span>
+        <a href="{{ '/garden' | relative_url }}">Garden</a>
+      </div>
+    </nav>
+
+    <article class="note">
+      <header class="note-header">
+        <h1 class="note-title">{{ page.title }}</h1>
+        {% if page.date %}
+        <p class="note-meta">
+          Last updated: {{ page.date | date: "%B %d, %Y" }}
+          {% if page.status %}
+          <span class="post-status {{ page.status }}">{{ page.status }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </header>
+
+      <div class="note-content">
+        {{ content }}
+      </div>
+
+      {% if page.backlinks.size > 0 %}
+      <aside class="backlinks">
+        <h2>Linked References</h2>
+        <div class="backlinks-list">
+          {% for backlink in page.backlinks %}
+          <a class="backlink-item" href="{{ site.baseurl }}{{ backlink.url }}">
+            <span class="backlink-title">{{ backlink.data.title }}</span>
+            <p class="backlink-excerpt">{{ backlink.content | strip_html | truncatewords: 20 }}</p>
+          </a>
+          {% endfor %}
+        </div>
+      </aside>
+      {% endif %}
+
+      <footer class="note-footer">
+        <a href="{{ '/garden' | relative_url }}">&larr; Back to Garden</a>
+      </footer>
+    </article>
+
+    <aside class="graph-container">
+      <h3>Knowledge Graph</h3>
+      <div id="graph"></div>
+    </aside>
+  </div>
+
+  {% include notes_graph.html %}
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark');
+      themeToggle.textContent = '\u263D';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      themeToggle.textContent = isDark ? '\u263D' : '\u263C';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://i.ibb.co/tP39Bnv/cardcard.png" />
+  <meta name="twitter:title" content="Digital Garden - Sebastian Hancock" />
+  <title>Digital Garden - Sebastian Hancock</title>
+  <link rel="shortcut icon" href="/favicon-globe.ico" type="image/x-icon">
+  <meta name='description'
+    content='Geospatial Software Engineer' />
+  <meta name="robots" content="index, follow">
+  <link href='/style.css' rel='stylesheet' />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-32ZRNNSGN6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-32ZRNNSGN6');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sebastian Hancock",
+    "jobTitle": "Geospatial Software Engineer",
+    "url": "https://sebastian-ch.github.io/",
+    "sameAs": [
+      "https://github.com/sebastian-ch",
+      "www.linkedin.com/in/sebastianhancock"
+    ],
+    "knowsAbout": ["React", "TypeScript", "Python", "GIS", "Software Development", "JavaScript", "ESRI", "Geospatial"]
+  }
+  </script>
+</head>
+
+<body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</button>
+  <nav class="garden-nav">
+  <div class="nav-categories">
+    <a href="/garden?category=code" class="nav-category">Code Snippets</a>
+    <a href="/garden?category=random" class="nav-category">Random Stuff</a>
+    <a href="/garden?category=geography" class="nav-category">Geography</a>
+  </div>
+  <div class="nav-breadcrumb">
+    <a href="/">Home</a>
+    <span class="nav-separator">/</span>
+    <a href="/garden">Garden</a>
+  </div>
+</nav>
+
+<div class="garden-container">
+  <h1 class="blog-title">Digital Garden</h1>
+  <p class="blog-subtitle">A collection of interconnected notes, ideas, and things I'm learning</p>
+
+  <div class="garden-search">
+    <input type="text" id="note-search" placeholder="Search notes..." />
+  </div>
+
+  <div class="tags-filter">
+    <span class="tags-label">Filter by tag:</span>
+    <button class="tag-btn active" data-tag="all">All</button>
+    
+    
+    
+    
+    <button class="tag-btn" data-tag="meta">meta</button>
+    
+    <button class="tag-btn" data-tag="welcome">welcome</button>
+    
+  </div>
+
+  <ul class="notes-list">
+    
+    
+    
+    <li class="note-item" data-tags="meta welcome" data-title="hello world">
+      <span class="post-date">January 06, 2026</span>
+      
+      <span class="post-status seedling">seedling</span>
+      
+      <a class="post-link" href="/notes/hello-world/">Hello World</a>
+      
+      <div class="note-tags">
+        
+        <span class="note-tag">meta</span>
+        
+        <span class="note-tag">welcome</span>
+        
+      </div>
+      
+      
+      <p class="post-excerpt">Welcome to my digital garden! This is a place where I cultivate ideas, connect thoughts, and learn in public. What is a Digital Garden? A...</p>
+      
+    </li>
+    
+    
+  </ul>
+
+  
+</div>
+
+<script>
+  // Search functionality
+  const searchInput = document.getElementById('note-search');
+  const noteItems = document.querySelectorAll('.note-item');
+  const tagBtns = document.querySelectorAll('.tag-btn');
+  let activeTag = 'all';
+
+  function filterNotes() {
+    const searchTerm = searchInput.value.toLowerCase();
+    noteItems.forEach(item => {
+      const title = item.dataset.title || '';
+      const tags = item.dataset.tags || '';
+      const matchesSearch = title.includes(searchTerm) || tags.includes(searchTerm);
+      const matchesTag = activeTag === 'all' || tags.split(' ').includes(activeTag);
+      item.style.display = (matchesSearch && matchesTag) ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterNotes);
+
+  tagBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tagBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTag = btn.dataset.tag;
+      filterNotes();
+    });
+  });
+</script>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark');
+      themeToggle.textContent = '\u263D';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      themeToggle.textContent = isDark ? '\u263D' : '\u263C';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+
+</html>

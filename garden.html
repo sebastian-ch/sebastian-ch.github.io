@@ -1,0 +1,103 @@
+---
+layout: default
+title: Digital Garden - Sebastian Hancock
+---
+<nav class="garden-nav">
+  <div class="nav-categories">
+    <a href="{{ '/garden' | relative_url }}?category=code" class="nav-category">Code Snippets</a>
+    <a href="{{ '/garden' | relative_url }}?category=random" class="nav-category">Random Stuff</a>
+    <a href="{{ '/garden' | relative_url }}?category=geography" class="nav-category">Geography</a>
+  </div>
+  <div class="nav-breadcrumb">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <span class="nav-separator">/</span>
+    <a href="{{ '/garden' | relative_url }}">Garden</a>
+  </div>
+</nav>
+
+<div class="garden-container">
+  <h1 class="blog-title">Digital Garden</h1>
+  <p class="blog-subtitle">A collection of interconnected notes, ideas, and things I'm learning</p>
+
+  <div class="garden-search">
+    <input type="text" id="note-search" placeholder="Search notes..." />
+  </div>
+
+  <div class="tags-filter">
+    <span class="tags-label">Filter by tag:</span>
+    <button class="tag-btn active" data-tag="all">All</button>
+    {% assign all_tags = "" | split: "" %}
+    {% for note in site.notes %}
+      {% if note.tags %}
+        {% for tag in note.tags %}
+          {% unless all_tags contains tag %}
+            {% assign all_tags = all_tags | push: tag %}
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    {% assign sorted_tags = all_tags | sort %}
+    {% for tag in sorted_tags %}
+    <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+    {% endfor %}
+  </div>
+
+  <ul class="notes-list">
+    {% assign sorted_notes = site.notes | sort: 'date' | reverse %}
+    {% for note in sorted_notes %}
+    {% unless note.url == '/garden' or note.title == nil %}
+    <li class="note-item" data-tags="{{ note.tags | join: ' ' }}" data-title="{{ note.title | downcase }}">
+      <span class="post-date">{{ note.date | date: "%B %d, %Y" }}</span>
+      {% if note.status %}
+      <span class="post-status {{ note.status }}">{{ note.status }}</span>
+      {% endif %}
+      <a class="post-link" href="{{ note.url | relative_url }}">{{ note.title }}</a>
+      {% if note.tags %}
+      <div class="note-tags">
+        {% for tag in note.tags %}
+        <span class="note-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if note.excerpt %}
+      <p class="post-excerpt">{{ note.content | strip_html | truncatewords: 25 }}</p>
+      {% endif %}
+    </li>
+    {% endunless %}
+    {% endfor %}
+  </ul>
+
+  {% if site.notes.size == 0 %}
+  <p class="no-posts">No seeds planted yet. Check back soon!</p>
+  {% endif %}
+</div>
+
+<script>
+  // Search functionality
+  const searchInput = document.getElementById('note-search');
+  const noteItems = document.querySelectorAll('.note-item');
+  const tagBtns = document.querySelectorAll('.tag-btn');
+  let activeTag = 'all';
+
+  function filterNotes() {
+    const searchTerm = searchInput.value.toLowerCase();
+    noteItems.forEach(item => {
+      const title = item.dataset.title || '';
+      const tags = item.dataset.tags || '';
+      const matchesSearch = title.includes(searchTerm) || tags.includes(searchTerm);
+      const matchesTag = activeTag === 'all' || tags.split(' ').includes(activeTag);
+      item.style.display = (matchesSearch && matchesTag) ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterNotes);
+
+  tagBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tagBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTag = btn.dataset.tag;
+      filterNotes();
+    });
+  });
+</script>

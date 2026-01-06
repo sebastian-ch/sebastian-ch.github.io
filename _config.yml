@@ -1,0 +1,29 @@
+title: Sebastian Chance Hancock
+description: Geospatial Software Engineer
+url: "https://sebastian-ch.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title/
+
+# Default frontmatter
+defaults:
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
+
+# Exclude files from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

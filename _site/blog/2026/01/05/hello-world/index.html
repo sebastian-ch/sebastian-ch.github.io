@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://i.ibb.co/tP39Bnv/cardcard.png" />
+  <meta name="twitter:title" content="Hello World" />
+  <title>Hello World</title>
+  <link rel="shortcut icon" href="/favicon-globe.ico" type="image/x-icon">
+  <meta name='description'
+    content='Geospatial Software Engineer' />
+  <meta name="robots" content="index, follow">
+  <link href='/style.css' rel='stylesheet' />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-32ZRNNSGN6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-32ZRNNSGN6');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sebastian Hancock",
+    "jobTitle": "Geospatial Software Engineer",
+    "url": "https://sebastian-ch.github.io/",
+    "sameAs": [
+      "https://github.com/sebastian-ch",
+      "www.linkedin.com/in/sebastianhancock"
+    ],
+    "knowsAbout": ["React", "TypeScript", "Python", "GIS", "Software Development", "JavaScript", "ESRI", "Geospatial"]
+  }
+  </script>
+</head>
+
+<body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</button>
+  <div class="blog-nav">
+  <a href="/">Home</a>
+  <a href="/blog">Garden</a>
+</div>
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Hello World</h1>
+    <p class="post-meta">
+      January 05, 2026
+      
+    </p>
+  </header>
+
+  <div class="post-content">
+    <p>Welcome to my blog! This is my first post.</p>
+
+<p>I’ll be writing about geospatial development, web mapping, and other things I find interesting.</p>
+
+<p>Stay tuned for more content!</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <a href="/blog">&larr; Back to Garden</a>
+  </footer>
+</article>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark');
+      themeToggle.textContent = '\u263D';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      themeToggle.textContent = isDark ? '\u263D' : '\u263C';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+
+</html>

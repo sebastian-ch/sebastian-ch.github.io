@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World - Digital Garden</title>
+  <link rel="shortcut icon" href="/favicon-globe.ico" type="image/x-icon">
+  <link href='/style.css' rel='stylesheet' />
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</button>
+
+  <div class="garden-wrapper">
+    <nav class="garden-nav">
+      <div class="nav-categories">
+        <a href="/garden?category=code" class="nav-category">Code Snippets</a>
+        <a href="/garden?category=random" class="nav-category">Random Stuff</a>
+        <a href="/garden?category=geography" class="nav-category">Geography</a>
+      </div>
+      <div class="nav-breadcrumb">
+        <a href="/">Home</a>
+        <span class="nav-separator">/</span>
+        <a href="/garden">Garden</a>
+      </div>
+    </nav>
+
+    <article class="note">
+      <header class="note-header">
+        <h1 class="note-title">Hello World</h1>
+        
+        <p class="note-meta">
+          Last updated: January 06, 2026
+          
+          <span class="post-status seedling">seedling</span>
+          
+        </p>
+        
+      </header>
+
+      <div class="note-content">
+        <p>Welcome to my digital garden! This is a place where I cultivate ideas, connect thoughts, and learn in public.</p>
+
+<h2 id="what-is-a-digital-garden">What is a Digital Garden?</h2>
+
+<p>A digital garden is different from a traditional blog. Instead of polished, finished posts ordered by date, it’s a collection of interconnected notes at various stages of development.</p>
+
+<p>Notes can be:</p>
+<ul>
+  <li><strong>Seedlings</strong>: New ideas, just planted</li>
+  <li><strong>Budding</strong>: Developing thoughts, getting more refined</li>
+  <li><strong>Evergreen</strong>: Well-developed, continually updated content</li>
+</ul>
+
+<h2 id="how-to-navigate">How to Navigate</h2>
+
+<p>You can explore by:</p>
+<ol>
+  <li>Clicking on <span class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  wiki-style links
+  <span class="invalid-link-brackets">]]</span>
+</span> to jump between connected notes</li>
+  <li>Using the tag filters on the garden page</li>
+  <li>Exploring the knowledge graph to see how ideas connect</li>
+</ol>
+
+<h2 id="learn-more">Learn More</h2>
+
+<p>Check out my notes on <span class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  geospatial development
+  <span class="invalid-link-brackets">]]</span>
+</span> or browse the <span class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  projects
+  <span class="invalid-link-brackets">]]</span>
+</span> I’m working on.</p>
+
+      </div>
+
+      
+
+      <footer class="note-footer">
+        <a href="/garden">&larr; Back to Garden</a>
+      </footer>
+    </article>
+
+    <aside class="graph-container">
+      <h3>Knowledge Graph</h3>
+      <div id="graph"></div>
+    </aside>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+  const graphData = {"edges":[],"nodes":[{"id":"721011081081113287111114108100","path":"/notes/hello-world/","label":"Hello World"}]};
+
+  if (graphData.nodes.length > 0) {
+    const container = document.getElementById('graph');
+    if (container) {
+      const width = container.offsetWidth || 300;
+      const height = 300;
+
+      const svg = d3.select('#graph')
+        .append('svg')
+        .attr('width', width)
+        .attr('height', height)
+        .attr('viewBox', [0, 0, width, height]);
+
+      const simulation = d3.forceSimulation(graphData.nodes)
+        .force('link', d3.forceLink(graphData.edges).id(d => d.id).distance(60))
+        .force('charge', d3.forceManyBody().strength(-100))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('collision', d3.forceCollide().radius(20));
+
+      const link = svg.append('g')
+        .attr('class', 'graph-links')
+        .selectAll('line')
+        .data(graphData.edges)
+        .join('line')
+        .attr('stroke', 'var(--border-color)')
+        .attr('stroke-opacity', 0.6)
+        .attr('stroke-width', 1);
+
+      const node = svg.append('g')
+        .attr('class', 'graph-nodes')
+        .selectAll('circle')
+        .data(graphData.nodes)
+        .join('circle')
+        .attr('r', 6)
+        .attr('fill', d => {
+          const currentPath = window.location.pathname;
+          return d.path === currentPath || d.path === currentPath + '.html'
+            ? 'var(--accent)'
+            : 'var(--text-secondary)';
+        })
+        .attr('stroke', 'var(--bg-card)')
+        .attr('stroke-width', 2)
+        .style('cursor', 'pointer')
+        .call(d3.drag()
+          .on('start', dragstarted)
+          .on('drag', dragged)
+          .on('end', dragended))
+        .on('click', (event, d) => {
+          window.location.href = d.path;
+        });
+
+      node.append('title')
+        .text(d => d.label);
+
+      const label = svg.append('g')
+        .attr('class', 'graph-labels')
+        .selectAll('text')
+        .data(graphData.nodes)
+        .join('text')
+        .attr('font-size', '10px')
+        .attr('fill', 'var(--text-secondary)')
+        .attr('dx', 10)
+        .attr('dy', 4)
+        .text(d => d.label.length > 15 ? d.label.substring(0, 15) + '...' : d.label);
+
+      simulation.on('tick', () => {
+        link
+          .attr('x1', d => d.source.x)
+          .attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x)
+          .attr('y2', d => d.target.y);
+
+        node
+          .attr('cx', d => d.x)
+          .attr('cy', d => d.y);
+
+        label
+          .attr('x', d => d.x)
+          .attr('y', d => d.y);
+      });
+
+      function dragstarted(event) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        event.subject.fx = event.subject.x;
+        event.subject.fy = event.subject.y;
+      }
+
+      function dragged(event) {
+        event.subject.fx = event.x;
+        event.subject.fy = event.y;
+      }
+
+      function dragended(event) {
+        if (!event.active) simulation.alphaTarget(0);
+        event.subject.fx = null;
+        event.subject.fy = null;
+      }
+    }
+  }
+</script>
+
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark');
+      themeToggle.textContent = '\u263D';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      themeToggle.textContent = isDark ? '\u263D' : '\u263C';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
