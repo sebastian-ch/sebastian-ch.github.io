@@ -1,6 +1,6 @@
 const projects = [
   {
-  'name': "Machine Learning Analysis of My Rocket League Games",
+  'name': "Machine Learning Analysis of My Rocket League Replays",
     'url': 'https://chance-labs.github.io/rocket-league-stats/',
   'github': ''
   },
