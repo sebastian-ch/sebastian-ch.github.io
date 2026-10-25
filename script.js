@@ -1,5 +1,10 @@
 const projects = [
   {
+  'name': "Machine Learning Analysis of My Rocket League Replays",
+    'url': 'https://chance-labs.github.io/rocket-league-stats/',
+  'github': ''
+  },
+  {
     'name': "Fortnite Stats Module for MagicMirror [JavaScript]",
     'url': 'https://github.com/sebastian-ch/MMM-fortnite-stats',
     'github': ''

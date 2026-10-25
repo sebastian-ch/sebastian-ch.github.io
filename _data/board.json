@@ -1,11 +1,20 @@
 {
   "cards": [
     {
+      "id": "7ad7e963",
+      "kind": "polaroid",
+      "tilt": -1.5,
+      "added": "2026-10-25",
+      "image": "/assets/garden/1792970786578-image.webp"
+    },
+    {
       "id": "esri",
       "kind": "paper",
       "title": "esri",
       "text": "hi",
-      "tags": ["code"],
+      "tags": [
+        "code"
+      ],
       "tilt": -2.5,
       "added": "2026-01-06"
     }
