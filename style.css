@@ -505,102 +505,13 @@
       filter: invert(1);
     }
 
-    /* Digital Garden Styles */
-    .garden-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    @media (max-width: 900px) {
-      .garden-wrapper {
-        grid-template-columns: 1fr;
-      }
-      .graph-container {
-        order: -1;
-      }
-    }
-
-    .garden-nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 24px 0;
-      margin-bottom: 24px;
-      grid-column: 1 / -1;
-    }
-
-    .garden-nav > a {
-      color: var(--text-secondary);
-      font-size: 15px;
-      padding: 0;
-    }
-
-    .garden-nav > a:hover {
-      color: var(--accent);
-    }
-
     .nav-separator {
       color: var(--border-color);
       font-size: 14px;
     }
 
-    .nav-categories {
-      display: flex;
-      gap: 6px;
-    }
-
-    .nav-breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-left: auto;
-    }
-
-    .nav-breadcrumb a {
-      font-family: var(--font-pixel-readable);
-      color: var(--text-secondary);
-      font-size: 18px;
-      padding: 0;
-    }
-
-    .nav-breadcrumb a:hover {
-      color: var(--accent);
-    }
-
     .nav-separator {
       font-family: var(--font-pixel-readable);
-    }
-
-    .nav-category {
-      font-family: var(--font-pixel);
-      font-size: 8px;
-      padding: 8px 16px;
-      background: var(--bg-card);
-      border: 2px solid var(--border-color);
-      border-radius: 0;
-      color: var(--text-secondary);
-      transition: all 0.15s;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 2px 2px 0 var(--border-color);
-    }
-
-    .nav-category:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translate(-1px, -1px);
-      box-shadow: 3px 3px 0 var(--accent-light);
-    }
-
-    .nav-category.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-      box-shadow: 2px 2px 0 var(--accent-hover);
     }
 
     .garden-container {
@@ -732,31 +643,8 @@
       font-size: 15px;
       line-height: 1.5;
       color: var(--text-secondary);
-    }
-
-    .scrap-text > :first-child {
-      margin-top: 0;
-    }
-
-    .scrap-text > :last-child {
-      margin-bottom: 0;
-    }
-
-    .scrap-text h2,
-    .scrap-text h3 {
-      font-size: 17px;
-      margin: 14px 0 6px;
-      color: var(--text-color);
-    }
-
-    .scrap-text ul,
-    .scrap-text ol {
-      padding-left: 20px;
-    }
-
-    .scrap-text img {
-      max-width: 100%;
-      height: auto;
+      white-space: pre-line;
+      margin: 0;
     }
 
     .scrap-meta {
@@ -873,13 +761,6 @@
     }
 
 
-    .note-tags {
-      margin-top: 8px;
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
     .note-tag {
       font-family: var(--font-pixel);
       font-size: 7px;
@@ -889,158 +770,6 @@
       border-radius: 0;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-    }
-
-    /* Single Note Styles */
-    .note {
-      max-width: 680px;
-    }
-
-    .note-header {
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .note-title {
-      font-size: 32px;
-      font-weight: normal;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .note-meta {
-      color: var(--post-date);
-      font-size: 14px;
-    }
-
-    .note-content {
-      line-height: 1.9;
-      font-size: 17px;
-    }
-
-    .note-content p {
-      margin-bottom: 20px;
-    }
-
-    .note-content h2 {
-      margin-top: 40px;
-      margin-bottom: 16px;
-    }
-
-    .note-content h3 {
-      margin-top: 28px;
-      margin-bottom: 12px;
-    }
-
-    .note-footer {
-      margin-top: 48px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .note-footer a {
-      padding: 0;
-    }
-
-    /* Internal Links (Wiki-style) */
-    .internal-link {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px dashed var(--accent-light);
-      padding: 0;
-      transition: border-color 0.2s;
-    }
-
-    .internal-link:hover {
-      border-bottom-style: solid;
-      border-color: var(--accent);
-    }
-
-    .invalid-link {
-      color: var(--post-date);
-      cursor: not-allowed;
-    }
-
-    .invalid-link-brackets {
-      color: var(--border-color);
-    }
-
-    /* Backlinks Section */
-    .backlinks {
-      margin-top: 48px;
-      padding: 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-    }
-
-    .backlinks h2 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--text-secondary);
-    }
-
-    .backlinks-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .backlink-item {
-      display: block;
-      padding: 12px;
-      background: var(--bg-color);
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background-color 0.2s;
-    }
-
-    .backlink-item:hover {
-      background: var(--border-color);
-    }
-
-    .backlink-title {
-      display: block;
-      font-weight: 500;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .backlink-excerpt {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    /* Graph Visualization */
-    .graph-container {
-      position: sticky;
-      top: 80px;
-      padding: 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      height: fit-content;
-    }
-
-    .graph-container h3 {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--text-secondary);
-    }
-
-    #graph {
-      width: 100%;
-      height: 300px;
-    }
-
-    #graph svg {
-      width: 100%;
-      height: 100%;
     }
 
     /* About Me Page */
@@ -1134,3 +863,76 @@
         width: 100px;
       }
     }
+
+  /* Pages matching the home page's plain look: Georgia throughout, no pixel fonts or blocky shadows */
+  .site-style {
+    --font-body: Georgia, serif;
+    --font-pixel: var(--font-body);
+    --font-pixel-readable: var(--font-body);
+  }
+
+  .site-style .garden-container {
+    padding-top: 56px;
+  }
+
+  .site-style .tag-btn {
+    font-size: 14px;
+    padding: 4px 12px;
+    border-width: 1px;
+    border-radius: 999px;
+    text-transform: none;
+    letter-spacing: 0;
+    box-shadow: none;
+  }
+
+  .site-style .tag-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .site-style .note-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .site-style .garden-search input {
+    font-size: 16px;
+    border-width: 1px;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+
+  .site-style .garden-search input:focus {
+    box-shadow: none;
+  }
+
+  .site-style .tags-label,
+  .site-style .scrap-meta,
+  .site-style .scrap-domain,
+  .site-style .board-status,
+  .site-style .board-toolbar-label,
+  .site-style .card-editor label {
+    font-size: 14px;
+  }
+
+  .site-style .scrap-title {
+    font-size: 20px;
+  }
+
+  .site-style .scrap.polaroid .scrap-title {
+    font-size: 17px;
+  }
+
+  .site-style .scrap.quote .scrap-title {
+    font-size: 15px;
+  }
+
+  .site-style .board-toolbar,
+  .site-style .card-editor {
+    border-width: 1px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px var(--scrap-shadow);
+  }

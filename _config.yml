@@ -7,20 +7,6 @@ baseurl: ""
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 
-# Collections
-collections:
-  notes:
-    output: true
-    permalink: /notes/:title/
-
-# Default frontmatter
-defaults:
-  - scope:
-      path: ""
-      type: "notes"
-    values:
-      layout: "note"
-
 # Exclude files from build
 exclude:
   - board-app

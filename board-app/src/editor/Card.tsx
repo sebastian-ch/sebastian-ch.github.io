@@ -1,22 +1,18 @@
 import type { CSSProperties } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { formatDate, hostOf, type Card } from './types';
+import { formatDate, hostOf, type Card } from '../types';
 
 interface Props {
   card: Card;
-  editing: boolean;
   selected: boolean;
   imageSrc?: string;
   fallbackSrc?: string;
   onSelect: (id: string) => void;
 }
 
-export function CardView({ card, editing, selected, imageSrc, fallbackSrc, onSelect }: Props) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
-    id: card.id,
-    disabled: !editing,
-  });
+export function CardView({ card, selected, imageSrc, fallbackSrc, onSelect }: Props) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: card.id });
 
   // Sortable transform goes on the slot so it doesn't fight the card's own tilt
   const slotStyle: CSSProperties = {
@@ -33,7 +29,9 @@ export function CardView({ card, editing, selected, imageSrc, fallbackSrc, onSel
       ref={setNodeRef}
       className={`scrap-slot${isDragging ? ' dragging' : ''}${selected ? ' selected' : ''}`}
       style={slotStyle}
-      {...(editing ? { ...attributes, ...listeners, onClick: () => onSelect(card.id) } : {})}
+      {...attributes}
+      {...listeners}
+      onClick={() => onSelect(card.id)}
     >
       <article
         className={`scrap ${kind}${pinned ? ' pinned' : ''}`}

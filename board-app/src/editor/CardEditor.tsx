@@ -1,4 +1,4 @@
-import { KINDS, type Card, type CardKind } from './types';
+import { KINDS, type Card, type CardKind } from '../types';
 
 interface Props {
   card: Card;

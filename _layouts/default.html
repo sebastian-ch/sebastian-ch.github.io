@@ -14,9 +14,11 @@
   <meta name='description'
     content='{{ page.description | default: site.description }}' />
   <meta name="robots" content="index, follow">
+  {% unless page.body_class == 'site-style' %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  {% endunless %}
   <link href='{{ "/style.css" | relative_url }}' rel='stylesheet' />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-32ZRNNSGN6"></script>
   <script>
@@ -42,7 +44,7 @@
   </script>
 </head>
 
-<body>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9788;</button>
   {{ content }}
   <script>

@@ -1,27 +1,78 @@
 ---
 layout: default
 title: Stuff I Find Interesting ATM - Sebastian Hancock
+body_class: site-style
+board_repo: sebastian-ch/sebastian-ch.github.io
+board_branch: master
 ---
-<nav class="garden-nav">
-  <div class="nav-categories">
-    <a href="{{ '/garden' | relative_url }}?category=code" class="nav-category">Code Snippets</a>
-    <a href="{{ '/garden' | relative_url }}?category=random" class="nav-category">Random Stuff</a>
-    <a href="{{ '/garden' | relative_url }}?category=geography" class="nav-category">Geography</a>
-  </div>
-  <div class="nav-breadcrumb">
-    <a href="{{ '/' | relative_url }}">Home</a>
-    <span class="nav-separator">/</span>
-    <a href="{{ '/garden' | relative_url }}">Garden</a>
-  </div>
-</nav>
+<div id='nav' class='nav sticky'>
+  <div id='item'><a href="{{ '/' | relative_url }}#center2">Top</a></div>
+  <div id='item'><a href="{{ '/' | relative_url }}#page2">Work</a></div>
+  <div id='item'><a href="{{ '/' | relative_url }}#page3">Education</a></div>
+  <div id='item'><a href="{{ '/' | relative_url }}#page4">Projects</a></div>
+  <div id='item'><a href="{{ '/' | relative_url }}#page5">About Me</a></div>
+  <div id='item'><a href="{{ '/garden' | relative_url }}">Garden</a></div>
+</div>
 
 <div class="garden-container board-page">
   <h1 class="blog-title">Stuff I Find Interesting ATM</h1>
   <p class="blog-subtitle">A collection of interconnected notes, ideas, and things I'm learning</p>
 
-  <div id="board-root" data-repo="sebastian-ch/sebastian-ch.github.io" data-branch="master"></div>
+  <div id="board-root" data-repo="{{ page.board_repo }}" data-branch="{{ page.board_branch }}">
+    {% assign cards = site.data.board.cards %}
+    {% assign all_tags = "" | split: "" %}
+    {% for card in cards %}{% for tag in card.tags %}{% unless all_tags contains tag %}{% assign all_tags = all_tags | push: tag %}{% endunless %}{% endfor %}{% endfor %}
+    {% assign all_tags = all_tags | sort %}
+
+    <div class="garden-search">
+      <input type="text" placeholder="Search…" aria-label="Search cards" />
+    </div>
+
+    {% if all_tags.size > 0 %}
+    <div class="tags-filter">
+      <span class="tags-label">Filter by tag:</span>
+      <button type="button" class="tag-btn active" data-tag="all">All</button>
+      {% for tag in all_tags %}<button type="button" class="tag-btn" data-tag="{{ tag | escape }}">{{ tag | escape }}</button>{% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="board">
+      {% for card in cards %}
+      {% assign tag_text = card.tags | join: ' ' %}
+      {% capture search_text %}{{ card.title }} {{ card.text }} {{ card.link }} {{ tag_text }}{% endcapture %}
+      <article class="scrap {{ card.kind }}{% if card.pinned %} pinned{% endif %}"
+        style="--tilt: {{ card.tilt | default: 0 }}deg"
+        data-tags="{{ tag_text | escape }}"
+        data-search="{{ search_text | strip | downcase | escape }}">
+        {% if card.image %}
+        <img src="{{ card.image | relative_url }}" alt="{{ card.alt | default: card.title | escape }}" loading="lazy"
+          onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/{{ page.board_repo }}/{{ page.board_branch }}{{ card.image }}'">
+        {% endif %}
+        {% if card.title %}
+        {% if card.link %}
+        <h2 class="scrap-title"><a href="{{ card.link | escape }}" target="_blank" rel="noopener">{{ card.title | escape }}</a></h2>
+        {% else %}
+        <h2 class="scrap-title">{{ card.title | escape }}</h2>
+        {% endif %}
+        {% endif %}
+        {% if card.link %}
+        <span class="scrap-domain">{{ card.link | split: "//" | last | split: "/" | first | remove_first: "www." | escape }} ↗</span>
+        {% endif %}
+        {% if card.text %}<p class="scrap-text">{{ card.text | escape }}</p>{% endif %}
+        {% assign show_tags = false %}
+        {% if card.tags.size > 0 and card.kind != "quote" %}{% assign show_tags = true %}{% endif %}
+        {% if show_tags or card.added %}
+        <div class="scrap-meta">
+          {% if card.added %}<time datetime="{{ card.added }}">{{ card.added | date: "%b %-d, %Y" }}</time>{% endif %}
+          {% if show_tags %}{% for tag in card.tags %}<span class="note-tag">{{ tag | escape }}</span>{% endfor %}{% endif %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if cards.size == 0 %}<p class="no-posts">Nothing here yet.</p>{% endif %}
+  </div>
 </div>
 
-<script id="board-data" type="application/json">{{ site.data.board | jsonify | replace: "</", "<\/" }}</script>
-<link rel="stylesheet" href="{{ '/assets/board/board.css' | relative_url }}">
 <script type="module" src="{{ '/assets/board/board.js' | relative_url }}"></script>
