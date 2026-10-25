@@ -1,0 +1,148 @@
+/* Editor chrome; card styles live in the site's style.css */
+.board.editing .scrap-slot {
+  cursor: grab;
+  touch-action: none;
+}
+
+.board.editing .scrap-slot.dragging {
+  cursor: grabbing;
+  opacity: 0.85;
+}
+
+.board.editing .scrap a {
+  pointer-events: none;
+}
+
+.scrap-slot.selected .scrap {
+  outline: 3px dashed var(--accent);
+  outline-offset: 6px;
+}
+
+.board.dropping {
+  outline: 3px dashed var(--accent);
+  outline-offset: 8px;
+  background: var(--accent-light);
+}
+
+.board-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 24px;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0 var(--border-color);
+}
+
+.board-toolbar label.tag-btn {
+  display: inline-block;
+}
+
+.board-toolbar-label,
+.board-status {
+  font-family: var(--font-pixel-readable);
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.board-toolbar-spacer {
+  flex: 1;
+}
+
+.board-toolbar button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.card-editor {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 30;
+  width: min(320px, calc(100vw - 32px));
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-card);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 0 var(--border-color);
+}
+
+.card-editor-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-pixel-readable);
+  font-size: 17px;
+}
+
+.card-editor label.check {
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-editor input:not([type='checkbox']):not([type='range']),
+.card-editor select,
+.card-editor textarea,
+.token-prompt input {
+  padding: 8px;
+  font: inherit;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+}
+
+.card-editor button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  color: var(--text-secondary);
+}
+
+.card-editor .link-btn {
+  align-self: flex-start;
+  text-decoration: underline;
+}
+
+.card-editor button.save {
+  margin-top: auto;
+  padding: 10px;
+  color: white;
+}
+
+.card-editor button.save:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.card-editor .danger {
+  padding: 10px;
+  border: 2px solid var(--pin);
+  color: var(--pin);
+}
+
+.token-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin: 32px auto;
+}

@@ -23,6 +23,7 @@ defaults:
 
 # Exclude files from build
 exclude:
+  - board-app
   - README.md
   - Gemfile
   - Gemfile.lock

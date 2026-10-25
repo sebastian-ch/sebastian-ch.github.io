@@ -83,10 +83,13 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       end
     end
 
-    File.write('_includes/notes_graph.json', JSON.dump({
+    # Only write when the graph changes; rewriting every build retriggers `jekyll serve --watch` forever
+    graph_path = '_includes/notes_graph.json'
+    graph_json = JSON.dump({
       edges: graph_edges,
       nodes: graph_nodes,
-    }))
+    })
+    File.write(graph_path, graph_json) unless File.exist?(graph_path) && File.read(graph_path) == graph_json
   end
 
   def note_id_from_note(note)

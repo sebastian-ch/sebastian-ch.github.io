@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
+gem "logger"
 
 platforms :windows, :jruby do
   gem "tzinfo", ">= 1", "< 3"
