@@ -5,7 +5,10 @@
       "kind": "polaroid",
       "tilt": -1.5,
       "added": "2026-10-25",
-      "image": "/assets/garden/1792970786578-image.webp"
+      "image": "/assets/garden/1792970786578-image.webp",
+      "tags": [
+        "maps"
+      ]
     },
     {
       "id": "esri",
